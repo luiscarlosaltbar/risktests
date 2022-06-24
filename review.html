@@ -60,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#expected-loss-best-estimate-t-test">Expected Loss Best Estimate t test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-hosmer-lemeshow-chi-squared-test">The Hosmer-Lemeshow-Chi-squared test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lgd-t-test">LGD t test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stability-of-migration-matrices">Stability of Migration Matrices</a></li>
 </ul>
 </li>
 </ul>
@@ -353,6 +354,39 @@ dof: the test’s degrees of freedom</p>
 This fundtion can be used for both performing and non-performing LGDs.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">lgd_t_test</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">observed_LGD_col</span><span class="o">=</span><span class="s1">&#39;LGD&#39;</span><span class="p">,</span> <span class="n">expected_LGD_col</span><span class="o">=</span><span class="s1">&#39;PRED_LGD&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<span class="target" id="module-risktests.Stability_of_Migration_Matrices"></span><section id="stability-of-migration-matrices">
+<h2>Stability of Migration Matrices<a class="headerlink" href="#stability-of-migration-matrices" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="risktests.Stability_of_Migration_Matrices.migration_matrix_stability">
+<span class="sig-prename descclassname"><span class="pre">risktests.Stability_of_Migration_Matrices.</span></span><span class="sig-name descname"><span class="pre">migration_matrix_stability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_ratings_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_ratings_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/risktests/Stability_of_Migration_Matrices.html#migration_matrix_stability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#risktests.Stability_of_Migration_Matrices.migration_matrix_stability" title="Permalink to this definition"></a></dt>
+<dd><p>z-tests to verify stability of transition matrices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>array-like</em><em>, </em><em>at least 2D</em>) – data</p></li>
+<li><p><strong>initial_ratings_col</strong> (<em>string</em>) – name of column with initial ratings values</p></li>
+<li><p><strong>final_ratings_col</strong> (<em>string</em>) – name of column with final ratings values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>z_df</strong> (<em>array-like</em>) – z statistic for each ratings pair</p></li>
+<li><p><strong>phi_df</strong> (<em>array-like</em>) – p-values for each ratings pair</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The Null hypothesis is that p_ij &gt;= p_ij-1 or p_ij-1 &gt;= p_ij
+depending on whether the (ij) entry is below or above main diagonal</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">migration_matrix_stability</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">initial_ratings_col</span><span class="o">=</span><span class="s1">&#39;ratings&#39;</span><span class="p">,</span> <span class="n">final_ratings_col</span><span class="o">=</span><span class="s1">&#39;ratings2&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 </div>
