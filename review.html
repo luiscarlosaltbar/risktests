@@ -53,7 +53,10 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Credits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Review of tests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Review of tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#customer-migrations">Customer migrations</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -80,8 +83,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="review-of-tests">
-<h1>Review of tests<a class="headerlink" href="#review-of-tests" title="Permalink to this headline"></a></h1>
+  <section id="module-risktests.Customer_migrations">
+<span id="review-of-tests"></span><h1>Review of tests<a class="headerlink" href="#module-risktests.Customer_migrations" title="Permalink to this headline"></a></h1>
+<section id="customer-migrations">
+<h2>Customer migrations<a class="headerlink" href="#customer-migrations" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="risktests.Customer_migrations.migration_matrix_statistics">
+<span class="sig-prename descclassname"><span class="pre">risktests.Customer_migrations.</span></span><span class="sig-name descname"><span class="pre">migration_matrix_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_ratings_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_ratings_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/risktests/Customer_migrations.html#migration_matrix_statistics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#risktests.Customer_migrations.migration_matrix_statistics" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates statistics that summarise the upgrades and downgrades of ratings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>array-like</em><em>, </em><em>at least 2D</em>) – data</p></li>
+<li><p><strong>initial_ratings_col</strong> (<em>string</em>) – name of column with observed LGD values</p></li>
+<li><p><strong>final_ratings_col</strong> (<em>string</em>) – name of column with expected LGD values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>upper_mwb</strong> (<em>float</em>) – upper matrix weighted bandwidth</p></li>
+<li><p><strong>lower_mwb</strong> (<em>float</em>) – lower matrix weighted bandwidth</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">migration_matrix_statistics</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">initial_ratings_col</span><span class="o">=</span><span class="s1">&#39;ratings&#39;</span><span class="p">,</span> <span class="n">final_ratings_col</span><span class="o">=</span><span class="s1">&#39;ratings2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 
