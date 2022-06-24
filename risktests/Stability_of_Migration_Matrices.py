@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 from scipy.stats import norm
 
-df = pd.read_excel('../risktests/synthetic_pd.xlsx')
-
 
 def migration_matrix_stability(df, initial_ratings_col, final_ratings_col):
     """z-tests to verify stability of transition matrices
