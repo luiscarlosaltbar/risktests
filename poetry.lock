@@ -985,7 +985,7 @@ test = ["pre-commit", "pytest"]
 
 [[package]]
 name = "typing-extensions"
-version = "4.2.0"
+version = "3.7.4"
 description = "Backported and Experimental Type Hints for Python 3.7+"
 category = "dev"
 optional = false
