@@ -1,4 +1,6 @@
-"""The Hosmer-Lemeshow-Chi-squared test
+"""
+The Hosmer-Lemeshow-Chi-squared test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Created on 2022-06-08
 
@@ -13,6 +15,7 @@
     The null hypotheisis makes two assumptions:
         -That the  forecasted default probabilities and the observed default rates are identically distributed, and;
         -that the defaults are independent.
+
     According to Blochwitz et al. (2006), under the assumptions the test statistic converges to a chi-square distribution with B-2 degrees of
     freedom if N (the number of observations) goes to infinity. Here B is the number of credit buckets.
 
@@ -71,39 +74,41 @@ class Hosmer_Lemeshow_Chi_Square:
 
     EXAMPLE
     -------
-    >>import Hosmer_Lemeshow_Chi_Square as HLC
-    >>import pandas as pd
-    >>import numpy as np
+    .. code-block:: python
 
-    >># Sampling the buckets randomly at fixed probabilities
-    >>buckets = np.random.choice(a=["Bucket one","Bucket two","Bucket three","Bucket four","Bucket five"], p = [0.15,0.25,0.05,0.05,0.5], size=1000)
-    >>loan_status = np.random.choice(a=["default", "non-default"], p=[0.3,0.7], size=1000)
+        >>> import Hosmer_Lemeshow_Chi_Square as HLC
+        >>> import pandas as pd
+        >>> import numpy as np
 
-    >>probs = []
+        >>> # Sampling the buckets randomly at fixed probabilities
+        >>> buckets = np.random.choice(a=["Bucket one","Bucket two","Bucket three","Bucket four","Bucket five"], p = [0.15,0.25,0.05,0.05,0.5], size=1000)
+        >>> loan_status = np.random.choice(a=["default", "non-default"], p=[0.3,0.7], size=1000)
 
-    >>for i in range(len(buckets)):
-    >>    if buckets[i] == 'Bucket one':
-    >>        probs.append(0.15)
-    >>    elif buckets[i] == 'Bucket two':
-    >>        probs.append(0.25)
-    >>    elif buckets[i] == 'Bucket three':
-    >>        probs.append(0.05)
-    >>    elif buckets[i] == 'Bucket four':
-    >>        probs.append(0.05)
-    >>    elif buckets[i] == 'Bucket five':
-    >>        probs.append(0.5)
-    >>
-    >>probs = np.array(probs)
+        >>> probs = []
 
-    >>loan_data = pd.DataFrame({'loan_bucket': buckets,
-    >>                          'loan_status': loan_status,
-    >>                          'PD': probs})
+        >>> for i in range(len(buckets)):
+        >>>     if buckets[i] == 'Bucket one':
+        >>>         probs.append(0.15)
+        >>>     elif buckets[i] == 'Bucket two':
+        >>>         probs.append(0.25)
+        >>>     elif buckets[i] == 'Bucket three':
+        >>>         probs.append(0.05)
+        >>>     elif buckets[i] == 'Bucket four':
+        >>>         probs.append(0.05)
+        >>>     elif buckets[i] == 'Bucket five':
+        >>>         probs.append(0.5)
+        >>> 
+        >>> probs = np.array(probs)
+
+        >>> loan_data = pd.DataFrame({'loan_bucket': buckets,
+        >>>                           'loan_status': loan_status,
+        >>>                           'PD': probs})
 
 
 
-    >>output = HLC.Hosmer_Lemeshow_Chi_Square(data=loan_data, buckets_col='loan_bucket', loan_statuses_col='loan_status', PDs_col='PD', alpha=0.05, verbose=True)
-    >>output.HLC_stat # Shows the Hower-Lemeshow statistic
-    >>output.p_value # Shows the p-value
+        >>> output = HLC.Hosmer_Lemeshow_Chi_Square(data=loan_data, buckets_col='loan_bucket', loan_statuses_col='loan_status', PDs_col='PD', alpha=0.05, verbose=True)
+        >>> output.HLC_stat # Shows the Hower-Lemeshow statistic
+        >>> output.p_value # Shows the p-value
     """
 
 

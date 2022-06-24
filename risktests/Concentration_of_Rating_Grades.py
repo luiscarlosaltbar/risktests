@@ -1,3 +1,7 @@
+"""
+Concentration of Rating Grades
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
@@ -36,8 +40,10 @@ def ratings_concentration(df, initial_ratings_col, final_ratings_col):
 
         Examples
         --------
-        >>res = ratings_concentration(df=df, initial_ratings_col='ratings', final_ratings_col='ratings2')
-        >>print(res)
+        .. code-block:: python
+
+            >>> res = ratings_concentration(df=df, initial_ratings_col='ratings', final_ratings_col='ratings2')
+            >>> print(res)
         """
 
     if df.empty:

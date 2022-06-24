@@ -1,8 +1,12 @@
+"""
+Stability of Migration Matrices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
 
-df = pd.read_excel('synthetic_pd.xlsx')
+df = pd.read_excel('../risktests/synthetic_pd.xlsx')
 
 
 def migration_matrix_stability(df, initial_ratings_col, final_ratings_col):
@@ -33,8 +37,10 @@ def migration_matrix_stability(df, initial_ratings_col, final_ratings_col):
 
     Examples
     --------
-    >>res = migration_matrix_stability(df=df, initial_ratings_col='ratings', final_ratings_col='ratings2')
-    >>print(res)
+    .. code-block:: python
+
+        >>> res = migration_matrix_stability(df=df, initial_ratings_col='ratings', final_ratings_col='ratings2')
+        >>> print(res)
     """
     a = df[initial_ratings_col]
     b = df[final_ratings_col]
