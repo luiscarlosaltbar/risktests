@@ -1,7 +1,3 @@
-"""
-Customer migrations
-~~~~~~~~~~~~~~~~~~~
-"""
 import pandas as pd
 
 

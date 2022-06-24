@@ -1,7 +1,4 @@
 """
-The Hosmer-Lemeshow-Chi-squared test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
     Created on 2022-06-08
 
     Author: Anton Treialt

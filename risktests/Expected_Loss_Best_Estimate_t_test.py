@@ -1,7 +1,3 @@
-"""
-Expected Loss Best Estimate t test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"""
 import numpy as np
 import pandas as pd
 from scipy.stats import t
