@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -51,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../authors.html">Credits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../review.html">Review of tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risktests/risktests.html">Review of tests</a></li>
 </ul>
 
         </div>
@@ -79,15 +80,11 @@
            <div itemprop="articleBody">
              
   <h1>Source code for risktests.LGD_t_test</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">LGD t test</span>
-<span class="sd">~~~~~~~~~~</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
 
-<div class="viewcode-block" id="lgd_t_test"><a class="viewcode-back" href="../../review.html#risktests.LGD_t_test.lgd_t_test">[docs]</a><span class="k">def</span> <span class="nf">lgd_t_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">observed_LGD_col</span><span class="p">,</span> <span class="n">expected_LGD_col</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="lgd_t_test"><a class="viewcode-back" href="../../risktests/risktests.LGD_t_test.html#risktests.LGD_t_test.lgd_t_test">[docs]</a><span class="k">def</span> <span class="nf">lgd_t_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">observed_LGD_col</span><span class="p">,</span> <span class="n">expected_LGD_col</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;t-test for the Null hypothesis that estimated LGD is greater than true LGD</span>
 
 

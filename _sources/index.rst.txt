@@ -10,7 +10,7 @@ Welcome to Credit Risk Validation Tests's documentation!
    contributing
    authors
    history
-   review
+   risktests/risktests
 
 Indices and tables
 ==================
